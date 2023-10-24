@@ -1,0 +1,352 @@
+gramaltin = 0
+ceyrekaltin = 0
+yarimaltin = 0
+tamaltin = 0
+hisse = 0
+fon = 0
+dolar = 0
+euro = 0
+bankadakitl = 0
+yanimdakitl = 0
+while True:
+    start = input('''
+WELCOME TO MONEY MANAGER
+
+SELECT ACTION:
+
+1- BALANCE INQUIRY
+2- DON'T QUESTION THE MONEY I HAVE WITH ME
+3- MAKING MONEY
+4- WITHDRAWAL
+5- DEPOSIT
+6- FOREIGN CURRENCIES
+7- STOCK EXCHANGE
+8- INVESTMENT
+q- Exit
+''')
+    
+    
+    if start=="q":
+        print("We wish you a nice day.")
+        break
+    if start=="1":
+        print(bankadakitl)
+    elif start=="2":
+        print(yanimdakitl)
+    elif start=="3":
+        A = int(input('''
+    EACH QUESTION IS 1000₺
+    (PLEASE WRITE IN NUMBERS...)
+
+    100+100=?
+    '''))
+        B = int(input('''
+    EACH QUESTION IS 1000₺
+    (PLEASE WRITE IN NUMBERS...)
+
+    100x10=?
+        '''))
+
+        C = int(input('''
+    EACH QUESTION IS 1000₺
+    (PLEASE WRITE IN NUMBERS...)
+
+    45x3=?
+        '''))
+        D = int(input("135x1000x200=?"))
+        if A==200:
+            yanimdakitl = yanimdakitl+1000
+            print("The money you have with you has increased!")
+        elif B==1000:
+            yanimdakitl = (yanimdakitl+1000)
+            print("The money you have with you has increased!")
+        elif C==135:
+            yanimdakitl = (yanimdakitl+1000)
+            print("The money you have with you has increased!")
+        else:
+            print("I'm sorry you didn't know")
+        if D==27000000:
+            print("Congratulations, you guessed it!")
+            bankadakitl = bankadakitl+313200    
+
+    elif start=="4":
+        cek = int(input("How much do you want to withdraw?")
+        if cek>bankadakitl:
+            print("You don't have that much money!")
+        elif cek<bankadakitl:
+            bankadakitl = (bankadakitl-cek)
+            yanimdakitl = yanimdakitl+cek
+            print("Withdrew!")
+        elif cek==bankadakitl:
+            print("Withdrew!")
+            yanimdakitl = yanimdakitl+cek
+            bankadakitl = bankadakitl-cek
+    elif start=="5":
+        yatir = int(input("How much would you like to deposit?"))
+        if yatir>yanimdakitl:
+            print("You don't have that much money!")
+        elif yatir<yanimdakitl:
+            print("Deposited!")
+            yanimdakitl = yanimdakitl-yatir
+            bankadakitl = bankadakitl+yatir
+        elif yatir==yanimdakitl:
+            print("Deposited!")
+            yanimdakitl = yanimdakitl-yatir
+            bankadakitl = bankadakitl+yatir
+    elif start=="6":
+        yurtdisi = int(input('''
+        SELECT THE MONEY YOU WILL PURCHASE:
+        1-$ = 29₺
+        2-€ = 30₺
+        3-$ INQUIRY
+        4-€ INQUIRY
+        5-$ EXCHANGE
+        6-€ EXCHANGE
+        7- RECEIVING $10800
+        8-5000000$ EXCHANGE
+        
+        '''))
+        if yurtdisi==1:
+            print("$1 Withdrawal...")
+            if bankadakitl>29:
+                print("Withdrew!")
+                dolar = dolar+1
+                bankadakitl = bankadakitl-29
+            elif bankadakitl<29:
+                print("You don't have that much money!")
+            elif bankadakitl==29:
+                print("Withdrew!")
+                dolar = dolar+1
+                bankadakitl = bankadakitl-29
+        elif yurtdisi==2:
+            if bankadakitl>30:
+                print("Withdrew!")
+                euro = euro+1
+                bankadakitl = bankadakitl-30
+            elif bankadakitl<30:
+                print("You don't have that much money!")
+            elif bankadakitl==30:
+                print("Withdrew!")
+                bankadakitl = bankadakitl-30
+                euro = euro+1
+        elif yurtdisi==3:
+            print(dolar,"$")
+        elif yurtdisi==4:
+            print(euro,"€")
+        elif yurtdisi==5:
+            if dolar>1:
+                print("Cashed in!")
+                bankadakitl = bankadakitl+29
+                dolar = dolar-1
+            elif dolar<1:
+                print("You don't have that much money!")
+            elif dolar==1:
+                print("Cashed in!")
+                bankadakitl = bankadakitl+29
+                dolar = dolar-1
+        elif yurtdisi==6:
+            if euro>1:
+                print("Cashed in!")
+                bankadakitl = bankadakitl+30
+                euro = euro-30
+            elif euro<1:
+                print("You don't have that much money!")
+            elif euro==1:
+                bankadakitl = bankadakitl+30
+                euro = euro-1
+        elif yurtdisi==7:
+            if bankadakitl>313200:
+                print("Receipt!")
+                bankadakitl = bankadakitl-313200
+                dolar = dolar+10800
+            elif bankadakitl<313200:
+                print("You don't have that much money!")
+            elif bankadakitl==313200:
+                print("Receipt!")
+                bankadakitl = bankadakitl-313200
+                dolar = dolar+10800
+        elif yurtdisi==8:
+            if dolar>5000000:
+                print("Cashed in!")
+                bankadakitl = bankadakitl+145000000
+                dolar = dolar-5000000
+            elif dolar<5000000:
+                print("You don't have that much $!")
+            elif dolar==5000000:
+                print("Cashed in!")
+                bankadakitl = bankadakitl+145000000
+                dolar = dolar-5000000
+    elif start=="7":
+        borsasec = int(input('''
+        
+WELCOME TO THE STOCK EXCHANGE
+
+        1-BUY SHARES
+        2-GET FUNDS
+        3-SELL SHARES
+        4-SELL FUNDS
+        5-SHARE INQUIRY
+        6-FUND INQUIRY
+
+
+
+        '''))
+        if borsasec==1:
+            print("Buying shares from Apple company...")
+            if dolar>6:
+                print("Share bought!")
+                dolar = dolar-6
+                hisse = hisse+1
+            elif dolar<6:
+                print("You don't have that much $!")
+            elif dolar==6:
+                print("Share bought!")
+                dolar = dolar-6
+                hisse = hisse+1
+        elif borsasec==2:
+            print("Receiving game funds...")
+            if dolar>8:
+                print("Funding received!")
+                dolar = dolar-8
+                fon = fon+1
+            elif dolar<8:
+                print("You don't have that much $!")
+            elif dolar==8:
+                print("Funding received!")
+                dolar = dolar-8
+                fon = fon+1
+        elif borsasec==3:
+            print("Apple company shares are being sold...")
+            if hisse>1:
+                print("Sold!")
+                dolar = dolar+12
+                hisse = hisse-1
+            elif hisse<1:
+                print("You don't have that many shares!")
+            elif hisse==1:
+                print("Sold!")
+                dolar = dolar+12
+                hisse = hisse-1
+        elif borsasec==4:
+            print("Game fund is for sale...")
+            if fon>1:
+                print("Sold!")
+                dolar = dolar+16
+                fon = fon-1
+            elif fon<1:
+                print("You don't have that much funds!")
+            elif fon==1:
+                print("Sold!")
+                dolar = dolar+16
+                fon = fon-1
+        elif borsasec==5:
+            print(hisse)
+        elif borsasec==6:
+            print(fon)
+    elif start=="8":
+        yatirimsec = int(input('''
+        
+WELCOME TO INVESTMENT
+
+        1-GRAM GOLD = $1800
+        2-QUARTER GOLD = $2700
+        3-HALF GOLD = $5400
+        4-FULL GOLD = 10800$
+        5-GRAM GOLD EXCHANGE
+        6-QUARTER GOLD EXCHANGE
+        7-EXCHANGING HALF GOLD
+        8-FULL GOLD EXCHANGE
+
+
+
+        '''))
+        if yatirimsec==1:
+            if dolar>1800:
+                print("Receipt!")
+                dolar = dolar-1800
+                gramaltin = gramaltin+1
+            elif dolar<1800:
+                print("You don't have that much $!")
+            elif dolar==1800:
+                print("Receipt!")
+                dolar = dolar-1800
+                gramaltin = gramaltin+1
+        elif yatirimsec==2:
+            if dolar>2700:
+                print("Receipt!")
+                dolar = dolar-2700
+                ceyrekaltin = ceyrekaltin+1
+            elif dolar<2700:
+                print("You don't have that much $!")
+            elif dolar==2700:
+                print("Receipt!")
+                dolar = dolar-2700
+                ceyrekaltin = ceyrekaltin+1
+        elif yatirimsec==3:
+            if dolar>5400:
+                print("Receipt!")
+                dolar = dolar-5400
+                yarimaltin = yarimaltin+1
+            elif dolar<5400:
+                print("You don't have that much $!")
+            elif dolar==5400:
+                print("Receipt!")
+                dolar = dolar-5400
+                yarimaltin = yarimaltin+1
+        elif yatirimsec==4:
+            if dolar>10800:
+                print("Receipt!")
+                dolar = dolar-10800
+                tamaltin = tamaltin+1
+            elif dolar<10800:
+                print("You don't have that much $!")
+            elif dolar==10800:
+                print("Receipt!)
+                dolar = dolar-10800
+                tamaltin = tamaltin+1
+        elif yatirimsec==5:
+            if gramaltin>1:
+                print("Cashed in!")
+                bankadakitl = bankadakitl+104400
+                gramaltin = gramaltin-1
+            elif gramaltin<1:
+                print("You don't have that much gold!")
+            elif gramaltin==1:
+                print("Cashed in!")
+                bankadakitl = bankadakitl+104400
+                gramaltin = gramaltin-1
+        elif yatirimsec==6:
+            if ceyrekaltin>1:
+                print("Cashed in!")
+                bankadakitl = bankadakitl+156600
+                ceyrekaltin = ceyrekaltin-1
+            elif ceyrekaltin<1:
+                print("You don't have that much gold!")
+            elif ceyrekaltin==1:
+                print("Cashed in!")
+                bankadakitl = bankadakitl+156600
+                ceyrekaltin = yarimaltin-1
+        elif yatirimsec==7:
+            if yarimaltin>1:
+                print("Cashed in!")
+                bankadakitl = bankadakitl+313200
+                yarimaltin = yarimaltin-1
+            elif yarimaltin<1:
+                print("You don't have that much gold!")
+            elif yarimaltin==1:
+                print("Cashed in!")
+                bankadakitl = bankadakitl+313200
+                yarimaltin = yarimaltin-1
+        elif yatirimsec==8:
+            if tamaltin>1:
+                print("Cashed in!")
+                bankadakitl = bankadakitl+5000000
+                tamaltin = tamaltin-1
+            elif tamaltin<1:
+                print("You don't have that much gold!")
+            elif tamaltin==1:
+                print("Cashed in!")
+                bankadakitl = bankadakitl+5000000
+                tamaltin = tamaltin-1
+    else:
+        print("Unknown transaction!")
